@@ -1,0 +1,11 @@
+# Logfile created on 2014-04-28 12:00:11 -0400 by logger.rb/44203
+I, [2014-04-28T12:00:11.433747 #83073]  INFO -- : 0:  coderay (1.1.0) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/coderay-1.1.0.gemspec
+I, [2014-04-28T12:00:11.434099 #83073]  INFO -- : 0:  diff-lcs (1.2.5) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/diff-lcs-1.2.5.gemspec
+I, [2014-04-28T12:00:11.434555 #83073]  INFO -- : 0:  method_source (0.8.2) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-04-28T12:00:11.434795 #83073]  INFO -- : 0:  slop (3.5.0) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/slop-3.5.0.gemspec
+I, [2014-04-28T12:00:11.435016 #83073]  INFO -- : 0:  pry (0.9.12.6) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/pry-0.9.12.6.gemspec
+I, [2014-04-28T12:00:11.435272 #83073]  INFO -- : 0:  rspec-core (2.14.8) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/rspec-core-2.14.8.gemspec
+I, [2014-04-28T12:00:11.435517 #83073]  INFO -- : 0:  rspec-expectations (2.14.5) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/rspec-expectations-2.14.5.gemspec
+I, [2014-04-28T12:00:11.435787 #83073]  INFO -- : 0:  rspec-mocks (2.14.6) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/rspec-mocks-2.14.6.gemspec
+I, [2014-04-28T12:00:11.436082 #83073]  INFO -- : 0:  rspec (2.14.1) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0/specifications/rspec-2.14.1.gemspec
+I, [2014-04-28T12:00:11.436349 #83073]  INFO -- : 0:  bundler (1.5.1) from /Users/anthonyrossdj/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
