@@ -1,8 +1,6 @@
-require 'pry'
 class BracketValidator
+
   def self.validate(string)
-    open_brackets = ["(", "[", "{"]
-    outter_bracks = [")", "]", "}"]
     valid_bracks = {
       "(" => ")",
       "[" => "]",
@@ -12,7 +10,7 @@ class BracketValidator
     last_inner_open_index = 0
     last_inner_open_char = ""
     brack_arr.each_with_index do |brack, index|
-      if open_brackets.include?(brack)
+      if valid_bracks.has_key?(brack)
         last_inner_open_index = index
         last_inner_open_char = brack
       end
