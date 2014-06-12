@@ -1,7 +1,7 @@
 def occurences(array)
   results = Hash.new 0 
   array.each { |val| results[val] += 1 }
-  results = non_uniq(results)
+  non_uniq(results)
 end
 
 def non_uniq(occurences_hash)
