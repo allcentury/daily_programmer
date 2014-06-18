@@ -77,6 +77,12 @@ describe Hand do
     hand = Hand.new(cards)
     expect(hand.three_of_a_kind?).to be(true)
   end
+  it 'validates a two pair' do
+    cards = []
+    cards.push(Card.new('Q', 'Spades'), Card.new('Q', 'Hearts'), Card.new('7', 'Diamonds'), Card.new('7', 'Hearts'), Card.new('5', 'Diamonds'))
+    hand = Hand.new(cards)
+    expect(hand.two_pair?).to be(true)
+  end
   it 'validates a pair' do
     cards = []
     cards.push(Card.new('8', 'Spades'), Card.new('8', 'Hearts'), Card.new('5', 'Hearts'), Card.new('4', 'Clubs'), Card.new('7', 'Hearts'))
@@ -108,5 +114,16 @@ describe Hand do
     end
     hand = Hand.new(cards)
     expect(hand.high_card).to eq(10)
+  end
+  it 'validates a hig face card' do
+    cards = []
+     suit = 'Diamonds'
+    vals = ['2', '5', '8', '9', 'A']
+    vals.each do |val|
+      cards << Card.new(val, suit)
+    end
+    hand = Hand.new(cards)
+    expect(hand.high_card).to eq('A')
+  
   end
 end

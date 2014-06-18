@@ -99,6 +99,15 @@ class Hand
     false
   end
 
+  def two_pair?
+    current_vals = values
+    results = 0
+    current_vals.each do |k, v|
+      results += 1 if v == 2
+    end
+    results == 2 ? true : false
+  end
+
   def flush?
     return true if suits.keys.uniq.count == 1
     false
@@ -107,7 +116,7 @@ class Hand
   def straight?
     current_vals = values.to_a
     prev_val = current_vals.first[0].to_i
-    (1..4).each do |ctr|
+    (1..current_vals.length-1).each do |ctr|
       if current_vals[ctr][0].to_i - prev_val != 1 
         return false
       end
@@ -117,7 +126,11 @@ class Hand
   end
 
   def high_card
-    vals = values.keys.sort_by { |k, v| v }.last.to_i
+    val = values.keys.sort_by { |k, v| v }.last.to_i
+    if val > 10
+      return to_face(val)
+    end
+    val
   end
 
   private
@@ -136,5 +149,10 @@ class Hand
       results[card.rank.to_s] += 1
     end
     results
+  end
+
+  def to_face(card)
+    ranks = {'14'=>'A', '13'=>'K', '12'=>'Q', '11'=>'J'}
+    ranks[card.to_s]
   end
 end
