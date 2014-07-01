@@ -1,18 +1,13 @@
-require 'pry'
 class Sentence
+
   def initialize(text)
     @text = text
   end
 
   def [] (index)
     words = get_words
-    if !words.has_key?(index.to_s)
-      return ""
-    else
-      words[index.to_s]
-    end
+    words.has_key?(index.to_s) ? words[index.to_s] : ""
   end
-
 
   private
 
@@ -26,4 +21,5 @@ class Sentence
     end
     words
   end
+  
 end
