@@ -59,4 +59,12 @@ describe Rotate do
     ]
     expect(Rotate.new(array).one_hundred_eighty_degrees).to eq(result_array)
   end
+  it 'flips a small 2d array 270 degrees' do
+    result_array = [
+      [3,6,9],
+      [2,5,8],
+      [1,4,7]
+    ]
+    expect(Rotate.new(array).two_hundred_seventy_degrees).to eq(result_array)
+  end
 end

@@ -17,11 +17,15 @@ class Rotate
       end
     end
     @current_array = new_array
-    new_array
   end
 
   def one_hundred_eighty_degrees
     2.times { self.ninety_degrees }
+    @current_array
+  end
+
+  def two_hundred_seventy_degrees
+    3.times { self.ninety_degrees }
     @current_array
   end
   
