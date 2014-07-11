@@ -40,22 +40,50 @@ class Hand
   def initialize(cards)
     @cards = cards
   end
+
+  def straight?
+    hand_suits = suits
+    valid_suit = hand_suits.select { |k,v| v >= 3 }
+    return false if valid_suit.empty?
+    sub_cards = []
+    @cards.each do |card|
+      sub_cards << card if valid_suit.has_key?(card.suit)
+    end
+    sorted_sub_cards = sort(sub_cards)
+    prev_card = sorted_sub_cards[0] 
+    correct = sorted_sub_cards.length 
+    (1..sorted_sub_cards.length-1).each do |i|
+      correct -= 1 if sorted_sub_cards[i].rank.to_i - prev_card.rank.to_i != 1
+      prev_card = sorted_sub_cards[i]
+    end
+    correct < 3 ? false : true
+  end
+
+  def four_of_a_kind?
+    vals = values
+    vals.values.include?(4) ? true : false
+  end
+
+  def three_of_a_kind?
+    vals = values
+    vals.values.include?(3) ? true : false
+  end
+
+  def meld?
+    straight? && (four_of_a_kind? || three_of_a_kind?) ? true : false
+  end
   
   private
 
   def suits
     results = Hash.new 0
-    @cards.each do |card|
-      results[card.suit] += 1
-    end
+    @cards.each { |card| results[card.suit] += 1 }
     results
   end
   
   def values
     results = Hash.new 0
-    @cards.each do |card|
-      results[card.rank.to_s] += 1
-    end
+    @cards.each { |card|  results[card.rank.to_s] += 1 }
     results
   end
 
@@ -63,4 +91,18 @@ class Hand
     ranks = {'14'=>'A', '13'=>'K', '12'=>'Q', '11'=>'J'}
     ranks[card.to_s]
   end
+
+  def sort(cards)
+    (0..cards.length).each do |i|
+      (i+1..cards.length-1).each do |j|
+        if cards[j].rank.to_i < cards[i].rank.to_i
+          temp = cards[i]
+          cards[i] = cards[j]
+          cards[j] = temp
+        end
+      end
+    end
+   cards 
+  end
+
 end
