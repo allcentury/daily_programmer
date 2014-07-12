@@ -26,6 +26,15 @@ describe Deck do
     expect(deck.new_game.count).to eq(52)
     expect(deck.new_game.uniq.count).to eq(52)
   end
+  it 'can deal a hand' do
+    deck = Deck.new
+    deck.new_game
+    hand = deck.deal_hand(5)
+    expect(hand.count).to eq(5)
+    expect(hand.first).to be_a(Card)
+    expect(deck.deck.count).to eq(47)
+    expect(deck.deck.uniq.count).to eq(47)
+  end
 end
 
 describe Hand do
@@ -94,5 +103,32 @@ describe Hand do
               )
     hand = Hand.new(cards)
     expect(hand.meld?).to be(true)
+  end
+  it 'validates a meld of a winning hand' do
+    cards = []
+    cards.push(Card.new('J', 'spades'),
+               Card.new('J', 'hearts'),
+               Card.new('J', 'clubs'),
+               Card.new('J', 'diamonds'),
+               Card.new('2', 'diamonds'),
+               Card.new('3', 'diamonds'),
+               Card.new('4', 'diamonds')
+              )
+    hand = Hand.new(cards)
+    expect(hand.meld?).to be(true)
+  end
+  it 'draws a card until a meld is found' do
+    cards = []
+    cards.push(Card.new('J', 'spades'),
+               Card.new('J', 'hearts'),
+               Card.new('J', 'clubs'),
+               Card.new('K', 'diamonds'),
+               Card.new('2', 'diamonds'),
+               Card.new('3', 'diamonds'),
+               Card.new('5', 'diamonds')
+              )
+    hand = Hand.new(cards)
+    expect(hand.meld?).to be(false)
+   
   end
 end

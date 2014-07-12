@@ -19,17 +19,29 @@ class Card
 end
 
 class Deck
+  attr_reader :deck
+  def initialize
+    @deck ||= []
+  end
 
   def new_game
-    deck = []
+    @deck = []
     suits = ['spades', 'hearts', 'clubs', 'diamonds']
     values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     suits.each do |suit|
-      values.each do |value|
-        deck << Card.new(value, suit)
-      end
+      values.each { |value| @deck << Card.new(value, suit) }
     end
-    deck
+    @deck
+  end
+
+  def deal_hand(card_count)
+    hand = []
+    (1..card_count).each do |i|
+      rand = rand(0..@deck.length)
+      hand << @deck[rand]
+      @deck.delete_at(rand)
+    end
+    hand
   end
 
 end
