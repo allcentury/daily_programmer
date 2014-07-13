@@ -37,11 +37,22 @@ class Deck
   def deal_hand(card_count)
     hand = []
     (1..card_count).each do |i|
-      rand = rand(0..@deck.length)
+      rand = rand(0..@deck.length-1)
       hand << @deck[rand]
       @deck.delete_at(rand)
     end
     hand
+  end
+
+  def draw
+    rand = rand(0..@deck.length-1)
+    card = @deck[rand]
+    @deck.delete_at(rand)
+    card
+  end
+
+  def <<(card)
+    @deck << card
   end
 
 end
@@ -83,6 +94,14 @@ class Hand
 
   def meld?
     straight? && (four_of_a_kind? || three_of_a_kind?) ? true : false
+  end
+
+  def <<(args)
+    @cards << args
+  end
+
+  def pop
+    @cards.pop
   end
   
   private

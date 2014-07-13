@@ -129,6 +129,6 @@ describe Hand do
               )
     hand = Hand.new(cards)
     expect(hand.meld?).to be(false)
-   
+     
   end
 end
