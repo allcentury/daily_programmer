@@ -1,0 +1,33 @@
+The number of violations per category are
+category,amount
+Garbage and Refuse,126
+Unsanitary Conditions,83
+Animals and Pests,180
+Building Conditions,62
+Vegetation,67
+Chemical Hazards,17
+Biohazards,7
+Air Pollutants and Odors,2
+Retail Food,1
+The earliest violations by category are
+violation_id,inspection_id,violation_category,violation_date,violation_date_closed,violation_type
+204851,204851,Garbage and Refuse,2012-01-03 00:00:00,2012-02-02 00:00:00,Refuse Accumulation
+204852,204852,Unsanitary Conditions,2012-01-03 00:00:00,2012-02-02 00:00:00,"Unsanitary conditions, not specified"
+204859,204859,Animals and Pests,2012-01-03 00:00:00,2012-03-12 00:00:00,"Animals and Pests, not specified"
+205555,205555,Building Conditions,2012-01-12 00:00:00,2012-01-27 00:00:00,Inadequate Pest Exclusion
+207159,207159,Vegetation,2012-02-01 00:00:00,2012-03-16 00:00:00,Overgrown Vegetation
+207610,207610,Chemical Hazards,2012-02-08 00:00:00,2012-02-20 00:00:00,Lead Hazard
+212892,212892,Biohazards,2012-04-13 00:00:00,2012-04-18 00:00:00,Human Feces
+229487,229487,Air Pollutants and Odors,2012-12-05 00:00:00,,Nuisance Odors
+230525,230525,Retail Food,2012-12-20 00:00:00,2013-01-23 00:00:00,Moderate risk food holding temperature
+The latest violations by category are
+violation_id,inspection_id,violation_category,violation_date,violation_date_closed,violation_type
+230162,230162,Animals and Pests,2012-12-28 00:00:00,,Bed Bugs
+230544,230544,Building Conditions,2012-12-26 00:00:00,2013-01-31 00:00:00,Non-functioning Smoke Detector
+229997,229997,Garbage and Refuse,2012-12-21 00:00:00,2012-12-21 00:00:00,Refuse Accumulation
+230525,230525,Retail Food,2012-12-20 00:00:00,2013-01-23 00:00:00,Moderate risk food holding temperature
+230394,230394,Air Pollutants and Odors,2012-12-19 00:00:00,2013-01-16 00:00:00,Nuisance Odors
+230403,230403,Unsanitary Conditions,2012-12-19 00:00:00,2013-01-16 00:00:00,Unsanitary Toilets or Bathrooms
+229670,229670,Biohazards,2012-12-18 00:00:00,2013-01-28 00:00:00,Human Feces
+228480,228480,Chemical Hazards,2012-12-06 00:00:00,,Lead Hazard
+228404,228404,Vegetation,2012-12-05 00:00:00,,Overgrown Vegetation

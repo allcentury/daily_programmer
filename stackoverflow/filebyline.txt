@@ -1,0 +1,18 @@
+start {
+  first_step {
+    sub_first_step {
+    };
+    sub_second_step {
+      code = 50,
+           post = xxx (aaaaaa,
+               bbbbbb,
+               cccccc,
+               eeeeee),
+           number = yyyy (fffffff,
+               gggggg,
+               jjjjjjj,
+               ppppppp),
+           another = xxx (qqqqq,
+               ssssss,
+               rrrrrr),
+    };
