@@ -115,6 +115,7 @@ class Hand
 
   def straight?
     current_vals = values.to_a
+    binding.pry
     prev_val = current_vals.first[0].to_i
     (1..current_vals.length-1).each do |ctr|
       if current_vals[ctr][0].to_i - prev_val != 1 
